@@ -36,6 +36,14 @@ class App extends Component {
   };
 
   render() {
+    const style = {
+      backgoundColor: 'white',
+      font: 'inherit',
+      border: '1px solid blue',
+      padding: '8px',
+      cursor: 'pointer'
+    };
+
     return (
       <div className="App">
         <h1>Hi, i'm a react app</h1>
@@ -52,7 +60,9 @@ class App extends Component {
         age={this.state.persons[2].age}
         click={() => this.switchNameHandler('Maxi')}
         changed={this.nameChangeHandler} />
-        <button onClick={this.switchNameHandler.bind(this, 'Maxi')}>Switch me</button>
+        <button 
+        style={style}
+        onClick={this.switchNameHandler.bind(this, 'Maxi')}>Switch me</button>
       </div>
     );
     // return React.createElement('div', {className:'App'}, React.createElement('h1', null, 'hi there!'));
