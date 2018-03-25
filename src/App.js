@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import styles from './App.css';
 import Radium, { StyleRoot } from 'radium';
 import Person from './Person/Person';
 
@@ -50,7 +50,7 @@ class App extends Component {
       cursor: 'pointer',
       ':hover': {
         backgroundColor: 'salmon',
-        color: 'black'
+        color: 'black',
       }
     };
 
@@ -79,16 +79,16 @@ class App extends Component {
     const classes = [];
 
     if (this.state.persons.length <= 2) {
-      classes.push('red');
+      classes.push(styles.red);
     } 
     
     if (this.state.persons.length <= 1) {
-      classes.push('bold');
+      classes.push(styles.bold);
     }
 
     return (
       <StyleRoot>
-        <div className="App">
+        <div className={styles.App}>
           <h1>Hi, i'm a react app</h1>
           <p className={classes.join(' ')}>This is working.</p>
           <button 
