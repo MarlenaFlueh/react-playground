@@ -43,18 +43,9 @@ class App extends Component {
   };
 
   render() {
-    const style = {
-      backgroundColor: 'red',
-      color: 'white',
-      padding: '8px',
-      cursor: 'pointer',
-      ':hover': {
-        backgroundColor: 'salmon',
-        color: 'black',
-      }
-    };
 
     let persons = null;
+    let btnClass = '';
 
     if (this.state.showPersons) {
       persons = (
@@ -69,11 +60,7 @@ class App extends Component {
           })}
         </div>
       );
-      style.backgroundColor = 'green';
-      style[':hover'] = {
-        backgroundColor: 'lightgreen',
-        color: 'black'
-      }
+      btnClass = styles.Red;
     }
 
     const classes = [];
@@ -92,7 +79,7 @@ class App extends Component {
           <h1>Hi, i'm a react app</h1>
           <p className={classes.join(' ')}>This is working.</p>
           <button 
-            style={style}
+            className={btnClass}
             onClick={this.togglePersonsHandler}>Switch me
           </button>
           {persons}
