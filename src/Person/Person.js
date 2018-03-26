@@ -4,15 +4,13 @@ import Radium from 'radium';
 
 const person = (props) => {
 
-  const style = {
-    '@media (min-width: 500px)': {
-      width: '450px',
-      backgroundColor: 'salmon'
-    }
-  }
+  const rnd = Math.random();
 
+  if (rnd > 0.7) {
+    throw new Error ("it failed.");
+  }
   return (
-    <div className={styles.Person} style={style}>
+    <div className={styles.Person}>
       <p onClick={props.click}>{props.name} is {props.age} years old.</p>
       <p>{props.children}</p>
       <input type='text' onChange={props.changed} value={props.name}/>
