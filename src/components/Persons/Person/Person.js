@@ -4,11 +4,6 @@ import Radium from 'radium';
 
 const person = (props) => {
 
-  const rnd = Math.random();
-
-  if (rnd > 0.7) {
-    throw new Error ("it failed.");
-  }
   return (
     <div className={styles.Person}>
       <p onClick={props.click}>{props.name} is {props.age} years old.</p>
