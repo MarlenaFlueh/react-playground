@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styles from './App.css';
-import Radium, { StyleRoot } from 'radium';
 import Persons from '../components/Persons/Persons';
+import Cockpit from '../components/Cockpit/Cockpit';
 
 
 class App extends Component {
@@ -46,41 +46,25 @@ class App extends Component {
   render() {
 
     let persons = null;
-    let btnClass = '';
 
     if (this.state.showPersons) {
       persons = <Persons
         persons={this.state.persons}
         click={this.deletePersonHandler}
         changed={this.nameChangeHandler} />
-      btnClass = styles.Red;
-    }
-
-    const classes = [];
-
-    if (this.state.persons.length <= 2) {
-      classes.push(styles.red);
-    } 
-    
-    if (this.state.persons.length <= 1) {
-      classes.push(styles.bold);
     }
 
     return (
-      <StyleRoot>
         <div className={styles.App}>
-          <h1>Hi, i'm a react app</h1>
-          <p className={classes.join(' ')}>This is working.</p>
-          <button 
-            className={btnClass}
-            onClick={this.togglePersonsHandler}>Switch me
-          </button>
+          <Cockpit
+          showPersons={this.state.showPersons}
+          persons={this.state.persons}
+          click={this.togglePersonsHandler} />
           {persons}
         </div>
-      </StyleRoot>
     );
     // return React.createElement('div', {className:'App'}, React.createElement('h1', null, 'hi there!'));
   }
 }
 
-export default Radium(App);
+export default App;
