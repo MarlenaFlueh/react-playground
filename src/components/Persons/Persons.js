@@ -3,11 +3,11 @@ import Person from './Person/Person';
 
 const persons = (props) => props.persons.map((person, index) => {
     return <Person
-      click={() => props.deletePersonHandler(index)}
+      click={() => props.click(index)}
       name={person.name} 
       age={person.age}
       key={person.id}
-      changed={(event) => props.nameChangeHandler(event, person.id)} />
+      changed={(event) => props.changed(event, person.id)} />
   } );
 
   export default persons;

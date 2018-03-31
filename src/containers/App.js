@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import styles from './App.css';
 import Radium, { StyleRoot } from 'radium';
-import Person from '../components/Persons/Person/Person';
 import Persons from '../components/Persons/Persons';
 
 
@@ -50,13 +49,10 @@ class App extends Component {
     let btnClass = '';
 
     if (this.state.showPersons) {
-      persons = (
-        <div>
-          click={this.deletePersonHandler}
-          changed={this.nameChangeHandler}
-          persons={this.state.persons}
-        </div>
-      );
+      persons = <Persons
+        persons={this.state.persons}
+        click={this.deletePersonHandler}
+        changed={this.nameChangeHandler} />
       btnClass = styles.Red;
     }
 
