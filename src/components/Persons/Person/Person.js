@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
-import withClass from "../../../hoc/withClass";
+import withClass from "../../../hoc/WithClass";
 import Aut from "../../../hoc/Aut";
 import styles from "./Person.css";
 
